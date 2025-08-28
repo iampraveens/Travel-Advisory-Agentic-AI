@@ -1,3 +1,4 @@
+setuptools
 langchain
 langchain-community
 langchain-experimental
