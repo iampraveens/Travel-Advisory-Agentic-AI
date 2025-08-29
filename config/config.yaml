@@ -1,10 +1,10 @@
 llm:
   openai:
     provider: "openai"
-    model: "o4-mini"
+    model_name: "o4-mini"
   groq:
     provider: "groq"
-    model: "openai/gpt-oss-120b"
+    model_name: "openai/gpt-oss-120b"
   google_genai:
     provider: "google_genai"
-    model: "gemini-2.5-flash"
+    model_name: "gemini-2.5-flash"
