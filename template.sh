@@ -14,7 +14,6 @@ touch research/trials.ipynb
 touch prompts/__init__.py
 touch prompts/prompt_template.py
 touch tools/__init__.py
-touch tools/arthmetic_ops_tool.py
 touch tools/currency_conversion_tool.py
 touch tools/expense_calculation_tool.py
 touch tools/place_search_tool.py
@@ -26,7 +25,6 @@ touch utils/expense_calculator.py
 touch utils/model_loader.py
 touch utils/place_info_searcher.py
 touch utils/weather_info.py
-touch utils/save_document.py
 touch .env 
 touch main.py
 touch app.py 

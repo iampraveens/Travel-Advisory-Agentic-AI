@@ -18,7 +18,7 @@ def main():
             st.markdown(msg["content"])
 
     # Chat input
-    user_input = st.chat_input("Ask a question about - Plan a trip for Dubai for 2 days")
+    user_input = st.chat_input("Ask a question about - Can you help me plan a 2-day trip to Dubai?")
     if user_input:
         st.session_state.chat_history.append({"role": "user", "content": user_input})
         with st.chat_message("user"):
