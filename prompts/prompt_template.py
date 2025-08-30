@@ -20,5 +20,7 @@ SYSTEM_PROMPT = SystemMessage(
     
     Use the available tools to gather information and make detailed cost breakdowns.
     Provide everything in one comprehensive response formatted in clean Markdown.
+
+    IMPORTANT: Always provide prices and cost breakdowns in the local currency of the destination (e.g., AED for Dubai, EUR for Paris, INR for India), unless the user requests otherwise.
     """
 )

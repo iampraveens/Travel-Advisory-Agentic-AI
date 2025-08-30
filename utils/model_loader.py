@@ -11,7 +11,7 @@ load_dotenv()
 
 class ConfigLoader:
     
-    def __init__(self, config):
+    def __init__(self):
         self.config = load_config()
 
     def __getitem__(self, key):
