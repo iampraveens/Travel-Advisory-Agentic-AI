@@ -7,6 +7,15 @@ from tools.weather_info_tool import WeatherInfoTool
 from tools.place_search_tool import PlaceSearchTool
 from tools.expense_calculation_tool import CalculatorTool
 from tools.currency_conversion_tool import CurrencyConverterTool
+from langsmith import traceable
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
+os.environ["LANGCHAIN_PROJECT"] = os.getenv("LANGSMITH_PROJECT")
+os.environ["LANGCHAIN_ENDPOINT"] = os.getenv("LANGCHAIN_ENDPOINT")
 
 class GraphBuilder():
     def __init__(self,model_provider: str = "groq"):
@@ -31,7 +40,7 @@ class GraphBuilder():
         
         self.system_prompt = SYSTEM_PROMPT
     
-    
+    @traceable(name="Travel-Advisory-Agentic-AI")
     def agent_function(self,state: MessagesState):
         """Main agent function"""
         user_question = state["messages"]

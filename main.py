@@ -5,7 +5,13 @@ from starlette.responses import JSONResponse
 import os
 from dotenv import load_dotenv
 from pydantic import BaseModel
+from langsmith import traceable
 load_dotenv()
+
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
+os.environ["LANGCHAIN_PROJECT"] = os.getenv("LANGSMITH_PROJECT")
+os.environ["LANGCHAIN_ENDPOINT"] = os.getenv("LANGCHAIN_ENDPOINT")
 
 app = FastAPI()
 
@@ -19,6 +25,7 @@ app.add_middleware(
 class QueryRequest(BaseModel):
     question: str
 
+@traceable(name="Travel-Advisory-Agentic-AI")
 @app.post("/query")
 async def query_travel_agent(query:QueryRequest):
     try:
