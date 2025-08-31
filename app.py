@@ -1,7 +1,10 @@
 import streamlit as st
 import requests
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-BASE_URL = "http://localhost:8000"
+BASE_URL = os.getenv("BASE_URL")
 
 def main():
     st.set_page_config(page_title="Travel Advisory Chatbot", page_icon="🌍", layout="centered")
